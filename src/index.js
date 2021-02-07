@@ -8,11 +8,17 @@ import 'antd/dist/antd.css';
 // import Login from './login/login.jsx'
 
 
+import { Provider } from 'react-redux';
+import store from './store/index';
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <Login></Login> */}
-    <App/>
-  </React.StrictMode>,
+  // <React.StrictMode>
+    // {/* <Login></Login> */}
+    <Provider store={store}>
+      <App/>
+    </Provider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
