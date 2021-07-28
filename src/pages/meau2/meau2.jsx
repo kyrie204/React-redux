@@ -1,12 +1,14 @@
-import React, { useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { REDUX_TEST_MODIFY, REDUX_TEST_MORE_REDUCERS } from '@/store/action/type'
-import { Input, Space, Button } from 'antd';
-
+import React, { useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+    REDUX_TEST_MODIFY,
+    REDUX_TEST_MORE_REDUCERS,
+} from "@/store/action/type";
+import { Input, Space, Button, Cascader } from "antd";
+import Cas from './cas'
 
 function Meau2() {
-
-    let testInput = useRef()
+    let testInput = useRef();
 
     let state = useSelector((state) => state);
     // console.log(state);
@@ -14,38 +16,48 @@ function Meau2() {
     const dispatch = useDispatch();
 
     const modify = () => {
-        var value = testInput.current.state.value
+        var value = testInput.current.state.value;
         dispatch({
             type: REDUX_TEST_MODIFY,
-            payload: value
-        })
-    }
+            payload: value,
+        });
+    };
     const moreReducers_modify = () => {
-        var value = testInput.current.state.value
+        var value = testInput.current.state.value;
         dispatch({
             type: REDUX_TEST_MORE_REDUCERS,
-            payload: value
-        })
-    }
+            payload: value,
+        });
+    };
+
     return (
         <div>
-            <Space direction='vertical'>
+            <Space direction="vertical">
                 <div>meau2</div>
                 <div>
-                    <Space direction='vertical'>
+                    <Space direction="vertical">
                         <Input placeholder="redux测试修改" ref={testInput} />
                         <div>
                             <Space>
-                                <Button type="primary" onClick={modify}>redux测试修改</Button>
-                                <Button type="primary" onClick={moreReducers_modify}>多个reducers redux测试修改</Button>
+                                <Button type="primary" onClick={modify}>
+                                    redux测试修改
+                                </Button>
+                                <Button
+                                    type="primary"
+                                    onClick={moreReducers_modify}
+                                >
+                                    多个reducers redux测试修改
+                                </Button>
                             </Space>
                         </div>
                     </Space>
                 </div>
             </Space>
-
+            <div>
+                <Cas></Cas>
+            </div>
         </div>
-    )
+    );
 }
 
 export default Meau2;

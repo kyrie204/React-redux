@@ -42,7 +42,7 @@ const Meau1 = () => {
             </Space>
             <div style={{ marginTop: 8 + "px" }}>
                 <Space>
-                    时间测试: {time.toLocaleTimeString()}
+                    时间测试: {time.toLocaleTimeString('chinese',{hour12:false})}
                     <Space>
                         <Button type="primary" onClick={clear}>
                             暂停
