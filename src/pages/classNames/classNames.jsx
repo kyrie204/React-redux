@@ -7,7 +7,6 @@ function ClassNames() {
     const [checked, setCheacked] = useState(false);
     const [col, setcol] = useState("#000");
     const [col2, setcol2] = useState("#aaa");
-
     const checkboxOnChange = (e) => {
         setCheacked(e.target.checked);
     };

@@ -11,7 +11,7 @@ import FrontendAuth  from './FrontendAuth'
 // import Login from './login/login.jsx'
 // import Home from './home/home.jsx'
 function App(props) {
-
+  // console.log(routes)
   return (
     // <Router>
     //     <div className="App">

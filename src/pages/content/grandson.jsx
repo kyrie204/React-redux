@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Space } from 'antd';
 
 function Grandson(props){
+    console.log(props.children);
     const toGrand= ()=>{
         props.bridge({value:'我是孙子组件来的数据'})
     }
